@@ -3,3 +3,10 @@
 
 # Ada Library Information
 *.ali
+
+# Alr output directories
+alire/
+bin/
+config/
+lib/
+obj/
