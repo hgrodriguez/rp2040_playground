@@ -7,6 +7,7 @@ with RP2040_SVD.Interrupts;
 with RP.Clock;
 with RP.Device;
 with RP.GPIO;
+with RP.Reset;
 with RP.UART;
 
 with ItsyBitsy;
@@ -28,10 +29,12 @@ procedure ItsyBitsy_Slave_Interrupt_Main is
    use HAL;
 
 begin
-
    RP.Clock.Initialize (ItsyBitsy.XOSC_Frequency);
    RP.Clock.Enable (RP.Clock.PERI);
    RP.Device.Timer.Enable;
+   RP.Reset.Reset_Peripheral (Peripheral => RP.Reset.Reset_SPI0);
+   RP.Reset.Reset_Peripheral (Peripheral => RP.Reset.Reset_UART0);
+   RP.GPIO.Enable;
 
    ItsyBitsy.LED.Configure (RP.GPIO.Output);
    ItsyBitsy.LED.Set;

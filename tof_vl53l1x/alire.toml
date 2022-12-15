@@ -1,0 +1,25 @@
+name = "tof_vl53l1x"
+description = "Shiny new project"
+version = "0.0.0"
+
+authors = ["Holger Rodriguez"]
+maintainers = ["Holger Rodriguez <github@roseng.ch>"]
+maintainers-logins = ["hgrodriguez"]
+
+executables = ["tof_vl53l1x"]
+
+[gpr-set-externals]
+#  I want all dependencies with full debug information
+ADAFLAGS="-g -Og"
+
+
+[[depends-on]]  # Added by alr
+embedded_components = "0.2.0"  # Added by alr
+[[depends-on]]  # Added by alr
+pico_bsp = "2.0.0"  # Added by alr
+[[depends-on]]  # Added by alr
+edc_client = "1.5.0"  # Added by alr
+
+[build-profiles]
+"*" = "development"
+

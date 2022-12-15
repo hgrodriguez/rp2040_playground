@@ -92,7 +92,7 @@ begin
       Trigger.Set;
       Pico.LED.Clear;
       Wait_For_Trigger_Released;
-      UART_Buffer_T (1) := UART_Buffer_T (1) + 0;
+      UART_Buffer_T (1) := UART_Buffer_T (1) + 1;
    end loop;
 
 end Pico_Master_Main;

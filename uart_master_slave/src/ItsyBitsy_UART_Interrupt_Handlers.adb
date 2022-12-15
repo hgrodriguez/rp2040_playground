@@ -18,6 +18,7 @@ package body ItsyBitsy_UART_Interrupt_Handlers is
       if UART.Masked_IRQ_Status (IRQ => RP.UART.Receive) then
          UART.Clear_IRQ (IRQ => RP.UART.Receive);
          UART0_Data_Received := True;
+         ItsyBitsy.LED.Toggle;
       end if;
    end UART0_IRQ_Handler;
 
